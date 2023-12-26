@@ -8,7 +8,8 @@ pipeline {
             }     
         }
         stage('docker-build') {
-            steps {              
+            steps {  
+               sh "sudo chown ubuntu:ubuntu /var/run/docker.sock"
                sh "docker build -t web ."
                sh "docker tag web nsannika/mineimages/web:4.0"
             }     
