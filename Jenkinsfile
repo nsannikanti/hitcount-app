@@ -11,7 +11,7 @@ pipeline {
             steps {  
                sh "sudo chown ubuntu:ubuntu /var/run/docker.sock"
                sh "docker build -t web ."
-               sh "docker tag web nsannika/mineimages/web:4.0"
+               sh "docker tag web nsannika/mineimages:4.0"
             }     
         }      
         stage('deployment') {
